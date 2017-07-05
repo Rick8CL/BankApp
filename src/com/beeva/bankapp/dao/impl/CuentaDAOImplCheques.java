@@ -1,5 +1,7 @@
 package com.beeva.bankapp.dao.impl;
 
+import java.util.Date;
+
 import com.beeva.bankapp.dao.Cliente;
 import com.beeva.bankapp.dao.inter.CuentaDAO;
 
@@ -16,10 +18,22 @@ public class CuentaDAOImplCheques implements CuentaDAO {
 
 	public boolean retiro(Cliente cliente, double dinero) {
 		boolean flag=false;
+		int dia=0;
 		double saldo=cliente.getCuenta().getBalance();
-		saldo = saldo - dinero;
-		cliente.getCuenta().setBalance(saldo);
-		flag=true;
+		Date hoy = new Date();
+		
+		dia=hoy.getDay();
+		//dia=6;
+		
+		if(dia==6 || dia==7){
+			System.out.println("No puedes retirar efectivo los fines de semana");
+			flag=false;
+		}else{
+			saldo = saldo - dinero;
+			cliente.getCuenta().setBalance(saldo);
+			flag=true;
+		}
+		
 		return flag;
 	}
 	

@@ -86,7 +86,7 @@ public class Principal {
                     	System.out.println("Numero de Cliente:");
                         x = lector.nextInt();
                         if (b.getCliente(x)!=null) {
-                            System.out.println("Cliente: " + b.getCliente(x).getNombre() + " con un saldo de: " + b.getCliente(x).getCuenta().getBalance());
+                            System.out.println("Cliente: " + b.getCliente(x).getNombre() + " con un saldo de: $" + b.getCliente(x).getCuenta().getBalance());
                         } else {
                             System.out.println("Cliente no registrado");
                         }
@@ -122,7 +122,7 @@ public class Principal {
                             if(status==true){
                             	System.out.println("Transaccion Exitosa!");
                             }else{
-                            	System.out.println("No puedes tener menos de $5000");
+                            	System.out.println("Transaccion Cancelada");
                             }
                         } else {
                             System.out.println("Cliente no registrado");
