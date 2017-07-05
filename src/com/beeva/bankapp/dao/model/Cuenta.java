@@ -7,33 +7,27 @@ package com.beeva.bankapp.dao.model;
 public class Cuenta {
 
     protected double balance = 0;
-    protected int tipoCuenta = 0;
+    protected String tipoCuenta = "";
     
-    public Cuenta(int tipo, double bal){
-    	tipoCuenta=tipo;
-    	balance=bal;
-    }
+    public Cuenta(double balance, String tipoCuenta){
+		this.balance=balance;
+		this.tipoCuenta=tipoCuenta;
+	}
 
-    public double getBalance() {
-        return balance;
-    }
+	public double getBalance() {
+		return balance;
+	}
 
-    public double deposito(double dinero) {
-        balance = balance + dinero;
-        return balance;
-    }
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
 
-    public void retiro(double dinero) {
-        balance = balance - dinero;
-    }
-
-	public int getTipoCuenta() {
+	public String getTipoCuenta() {
 		return tipoCuenta;
 	}
 
-	public void setTipoCuenta(int tipoCuenta) {
+	public void setTipoCuenta(String tipoCuenta) {
 		this.tipoCuenta = tipoCuenta;
 	}
-    
     
 }

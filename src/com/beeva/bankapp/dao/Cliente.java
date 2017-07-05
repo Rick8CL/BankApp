@@ -8,8 +8,8 @@ import com.beeva.bankapp.dao.model.Cuenta;
  * 03/07/2017
  */
 public class Cliente{
-	public String nombre="", apellido="";
-	public Cuenta cuenta;
+	private String nombre="", apellido="";
+	private Cuenta cuenta;
 
 	public Cliente(String nom, String ape, Cuenta cue){
 		nombre=nom;
